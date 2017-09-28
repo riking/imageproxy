@@ -15,6 +15,8 @@ site (read more in [this post][]).  But you can also enable request signing and
 use it as an SSL proxy for remote images, similar to [atmos/camo][] but with
 additional image adjustment options.
 
+Note: The import path is 
+
 [this post]: https://willnorris.com/2014/01/a-self-hosted-alternative-to-jetpacks-photon-service
 [atmos/camo]: https://github.com/atmos/camo
 
@@ -246,8 +248,8 @@ In most cases, you can follow the normal procedure for building a deploying any
 go application.  For example, I build it directly on my production debian server
 using:
 
- - `go build willnorris.com/go/imageproxy/cmd/imageproxy`
- - copy resulting binary to `/usr/local/bin`
+ - `go get willnorris.com/go/imageproxy/cmd/imageproxy`
+ - copy resulting binary: `sudo cp ~/go/bin/imageproxy /usr/local/bin/`
  - copy [`etc/imageproxy.service`](etc/imageproxy.service) to
    `/lib/systemd/system` and enable using `systemctl`.
 
